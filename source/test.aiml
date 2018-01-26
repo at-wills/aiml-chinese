@@ -2,7 +2,7 @@
 <aiml version="1.0">
 <category>
 <pattern>你好</pattern>
-<template>你也好</template>
+<template>你也好！</template>
 </category>
 <category>
 <pattern>明天 天津 下雨</pattern>

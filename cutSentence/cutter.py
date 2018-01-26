@@ -5,7 +5,7 @@ import re
 
 # 去除中文标点符号
 def deal_punctuation(text):
-    s = re.sub('[·！￥……（）——【】、“”‘’；：《》，。？〈〉～]+'.decode("utf-8"), ' '.decode('utf-8'),
+    s = re.sub('[·￥（）——【】、“”‘’；：《》，〈〉～]+'.decode("utf-8"), ' '.decode('utf-8'),
                text.decode('utf-8'))
     return s
 
