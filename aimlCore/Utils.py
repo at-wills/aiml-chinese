@@ -1,3 +1,4 @@
+# coding=utf-8
 """This file contains assorted general utility functions used by other
 modules in the PyAIML package.
 
@@ -17,7 +18,15 @@ def sentences(s):
         except: q = l+1
         try: e = s.index('!', pos)
         except: e = l+1
-        end = min(p,q,e)
+        try: ju = s.index('。'.decode('utf-8'), pos)
+        except: ju = l+1
+        try: wen = s.index('？'.decode('utf-8'), pos)
+        except: wen = l+1
+        try: tan = s.index('！'.decode('utf-8'), pos)
+        except: tan = l+1
+        try: sheng = s.index('…'.decode('utf-8'), pos)
+        except: sheng = l+1
+        end = min(p,q,e,ju,wen,tan,sheng)
         sentenceList.append( s[pos:end].strip() )
         pos = end+1
     # If no sentences were found, return a one-item list containing
