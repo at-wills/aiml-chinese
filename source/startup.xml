@@ -3,7 +3,7 @@
 <category>
 <pattern>LOAD ALICE</pattern>
 <template>
-<learn>test.aiml</learn>
+<learn>test.aiml</learn><learn>brain.aiml</learn>
 </template>
 </category>
 </aiml>

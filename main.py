@@ -2,6 +2,8 @@
 from aimlCore import Kernel
 from cutSentence import cutter
 import os
+import codecs
+from textrank4zh import TextRank4Keyword, TextRank4Sentence
 
 alice = Kernel()
 alice.learn('source/startup.xml')
@@ -11,6 +13,14 @@ path = 'source'
 os.chdir(path)
 
 alice.respond('LOAD ALICE')
+
+tr4w = TextRank4Keyword()
+
+
+def keywords(sentence):
+    tr4w.analyze(text=sentence, lower=True, window=2)
+    for words in tr4w.words_no_stop_words:
+        print '/'.join(words)
 
 
 def ask_api(input_words):
@@ -26,4 +36,8 @@ def talk():
         response = alice.respond(user_input)
         print response
 
-#talk()
+
+# talk()
+while 1:
+    t = input()
+    keywords(t)
