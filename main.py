@@ -1,9 +1,8 @@
 # coding=utf-8
 from aimlCore import Kernel
-from cutSentence import cutter
 import os
 import codecs
-from textrank4zh import TextRank4Keyword, TextRank4Sentence
+from textrank4zh import TextRank4Keyword
 
 alice = Kernel()
 alice.learn('source/startup.xml')
@@ -40,4 +39,4 @@ def talk():
         print response
 
 
-# talk()
+talk()

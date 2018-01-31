@@ -258,6 +258,8 @@ class PatternMgr:
 		if len(words) == 0:
 			# we're out of words.
 			pattern = []
+			while root.has_key(self._STAR):
+				root = root[self._STAR]
 			template = None
 			if len(thatWords) > 0:
 				# If thatWords isn't empty, recursively
@@ -320,8 +322,8 @@ class PatternMgr:
 		if root.has_key(self._STAR):
 			# Must include the case where suf is [] in order to handle the case
 			# where a * or _ is at the end of the pattern.
-			for j in range(len(suffix)+1):
-				suf = suffix[j:]
+			for j in range(len(words)+1):
+				suf = words[j:]
 				pattern, template = self._match(suf, thatWords, topicWords, root[self._STAR])
 				if template is not None:
 					newPattern = [self._STAR] + pattern
