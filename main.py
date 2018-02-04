@@ -20,6 +20,16 @@ def keywords(sentence):
     tr4w.analyze(text=sentence, lower=True, window=2)
     key_words = ''
     for words in tr4w.words_no_stop_words:
+        i = 0
+        while i < len(words):
+            # 如果你需要替换
+            if words[i] == '不是':
+                words[i] = '不'
+            # 如果你需要删除
+            if words[i] == '很' || words[i] == '非常':
+                del words[i]
+                i -= 1
+            i += 1
         key_words += ' '.join(words)
     print '关键词提取结果：', key_words
     return key_words
