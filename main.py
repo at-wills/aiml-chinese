@@ -38,5 +38,5 @@ def talk():
         response = alice.respond(user_input)
         print response
 
-
-talk()
+if __name__ == '__main__':
+    talk()

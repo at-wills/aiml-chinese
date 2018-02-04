@@ -1,0 +1,10 @@
+<aiml version="1.0">
+  <category>
+    <pattern>* 喜欢 * 跑步 *</pattern>
+    <template>跑步很棒！</template>
+  </category>
+    <category>
+    <pattern>* 不 喜欢 * 跑步 *</pattern>
+    <template>你需要加强锻炼！</template>
+  </category>
+</aiml>

@@ -9,7 +9,7 @@
 2. 使用 pip 安装依赖
 
    ```shell
-   pip install jieba
+   pip install textrank4zh
    ```
 
    执行主程序进行对话
@@ -33,4 +33,5 @@
    ```
 
    访问网页 `localhost:8080`
+
 
