@@ -1,14 +1,15 @@
 <aiml version="1.0">
   <category>
-    <pattern>* 喜欢 * 跑步 *</pattern>
-    <template><think><set name="attitude-to-sport">like</set></think><set name="like-sport">跑步</set>是很棒的运动！</template>
-  </category>
-  <category>
     <pattern>* 不 喜欢 * 运动 *</pattern>
     <template><srai>语言槽 运动之讨厌运动</srai>你需要注意锻炼身体</template>
   </category>
   <category>
       <pattern>* 不 *</pattern>
+      <that>那么你喜欢其他的体育运动吗？</that>
+      <template><srai>* 不 喜欢 * 运动 *</srai></template>
+  </category>
+  <category>
+      <pattern>* NO *</pattern>
       <that>那么你喜欢其他的体育运动吗？</that>
       <template><srai>* 不 喜欢 * 运动 *</srai></template>
   </category>
@@ -70,44 +71,48 @@
       <template><think><set name="attitude-to-sport">dislike</set></think><random><li>生命在于运动，</li><li>流水不腐，户枢不蠹。</li><li>身体的健康因静止不动而破坏,因运动练习而长期保持。</li></random></template>
   </category>
   <category>
+    <pattern>* 喜欢 * 跑步 *</pattern>
+    <template><set name="like-sport">跑步</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+  </category>
+  <category>
     <pattern>* 喜欢 * 散步 *</pattern>
-    <template><think><set name="like-sport">散步</set></think><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+    <template><set name="like-sport">散步</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 竞走 *</pattern>
-    <template><think><set name="like-sport">竞走</set></think><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+    <template><set name="like-sport">竞走</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 快走 *</pattern>
-    <template><think><set name="like-sport">快走</set></think><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+    <template><set name="like-sport">快走</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 慢跑 *</pattern>
-    <template><think><set name="like-sport">慢跑</set></think><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+    <template><set name="like-sport">慢跑</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 长跑 *</pattern>
-    <template><think><set name="like-sport">长跑</set></think><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
+    <template><set name="like-sport">长跑</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 打篮球 *</pattern>
-    <template><think><set name="like-sport">打篮球</set></think><srai>语言槽 运动之赞美运动项目</srai></template>
+    <template><set name="like-sport">打篮球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 打网球 *</pattern>
-    <template><think><set name="like-sport">网球</set></think><srai>语言槽 运动之赞美运动项目</srai></template>
+    <template><set name="like-sport">网球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 羽毛球 *</pattern>
-    <template><think><set name="like-sport">羽毛球</set></think><srai>语言槽 运动之赞美运动项目</srai></template>
+    <template><set name="like-sport">羽毛球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 踢足球 *</pattern>
-    <template><think><set name="like-sport">踢足球</set></think><srai>语言槽 运动之赞美运动项目</srai></template>
+    <template><set name="like-sport">踢足球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 下棋 *</pattern>
-    <template><think><set name="like-sport">棋类</set></think><srai>语言槽 运动之赞美运动项目</srai></template>
+    <template><set name="like-sport">棋类</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
     <pattern>* 喜欢 * 下象棋 *</pattern>
