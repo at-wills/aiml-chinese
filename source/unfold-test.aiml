@@ -1,0 +1,21 @@
+<aiml version="1.0">
+  <category>
+    <pattern>* 不 喜欢 * 运动 *</pattern>
+    <template>
+      <srai>语言槽 运动之讨厌运动</srai>你需要注意锻炼身体</template>
+  </category>
+  <category>
+    <pattern>* 不
+      <fold>
+        <or>喜欢</or>
+        <or>like</or>
+      </fold> *
+      <fold>
+        <or>篮球</or>
+        <or>足球</or>
+        <or>乒乓球</or>
+      </fold> *</pattern>
+    <template>
+      <srai>语言槽 运动之讨厌运动</srai>你需要注意锻炼身体</template>
+  </category>
+</aiml>
