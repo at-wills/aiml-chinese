@@ -1,9 +1,10 @@
 # coding=utf-8
 from aimlCore import Kernel
 import os
-import codecs
+import jieba
 from textrank4zh import TextRank4Keyword
 
+jieba.load_userdict('source/user-dict')
 alice = Kernel()
 alice.learn('source/startup.xml')
 
@@ -47,6 +48,14 @@ def talk():
         user_input = keywords(user_input)
         response = alice.respond(user_input)
         print response
+
+
+# only called by split-test.py
+def reload_user_dict(last_dict):
+    for i in last_dict:
+        jieba.del_word(i)
+    jieba.load_userdict('user-dict')
+
 
 if __name__ == '__main__':
     talk()

@@ -26,7 +26,7 @@ not.
 # Get around this by importing UserDict.UserDict if the built-in dict
 # object isn't available.
 try: dict
-except: from UserDict import UserDict as dict
+except: from UserDict import UserDict as sub_dict
 
 import ConfigParser
 import re
