@@ -4,6 +4,10 @@
     <template><srai>语言槽 运动之讨厌运动</srai>你需要注意锻炼身体</template>
   </category>
   <category>
+      <pattern>我 爱 踢球</pattern>
+      <template>我也喜欢踢球！</template>
+  </category>
+  <category>
       <pattern>* 不 *</pattern>
       <that>那么你喜欢其他的体育运动吗？</that>
       <template><srai>* 不 喜欢 * 运动 *</srai></template>

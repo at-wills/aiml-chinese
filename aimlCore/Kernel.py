@@ -1,10 +1,8 @@
 # -*- coding: latin-1 -*-
 """This file contains the public interface to the aiml module."""
 import AimlParser
-import DefaultSubs
 import Utils
 from PatternMgr import PatternMgr
-from WordSub import WordSub
 
 from ConfigParser import ConfigParser
 import copy
@@ -17,6 +15,8 @@ import sys
 import time
 import threading
 import xml.sax
+import Sub
+from termcolor import colored
 
 
 class Kernel:
@@ -43,13 +43,6 @@ class Kernel:
         # Set up the bot predicates
         self._botPredicates = {}
         self.setBotPredicate("name", "Nameless")
-
-        # set up the word substitutors (subbers):
-        self._subbers = {}
-        self._subbers['gender'] = WordSub(DefaultSubs.defaultGender)
-        self._subbers['person'] = WordSub(DefaultSubs.defaultPerson)
-        self._subbers['person2'] = WordSub(DefaultSubs.defaultPerson2)
-        self._subbers['normal'] = WordSub(DefaultSubs.defaultNormal)
         
         # set up the element processors
         self._elementProcessors = {
@@ -85,6 +78,7 @@ class Kernel:
             "uppercase":    self._processUppercase,
             "version":      self._processVersion,
         }
+        Sub.init()
 
     def bootstrap(self, brainFile = None, learnFiles = [], commands = []):
         """Prepare a Kernel object for use.
@@ -215,28 +209,28 @@ class Kernel:
         """Set the text encoding used when loading AIML files (Latin-1, UTF-8, etc.)."""
         self._textEncoding = encoding
 
-    def loadSubs(self, filename):
-        """Load a substitutions file.
-
-        The file must be in the Windows-style INI format (see the
-        standard ConfigParser module docs for information on this
-        format).  Each section of the file is loaded into its own
-        substituter.
-
-        """
-        inFile = file(filename)
-        parser = ConfigParser()
-        parser.readfp(inFile, filename)
-        inFile.close()
-        for s in parser.sections():
-            # Add a new WordSub instance for this section.  If one already
-            # exists, delete it.
-            if self._subbers.has_key(s):
-                del(self._subbers[s])
-            self._subbers[s] = WordSub()
-            # iterate over the key,value pairs and add them to the subber
-            for k,v in parser.items(s):
-                self._subbers[s][k] = v
+    # def loadSubs(self, filename):
+    #     """Load a substitutions file.
+    #
+    #     The file must be in the Windows-style INI format (see the
+    #     standard ConfigParser module docs for information on this
+    #     format).  Each section of the file is loaded into its own
+    #     substituter.
+    #
+    #     """
+    #     inFile = file(filename)
+    #     parser = ConfigParser()
+    #     parser.readfp(inFile, filename)
+    #     inFile.close()
+    #     for s in parser.sections():
+    #         # Add a new WordSub instance for this section.  If one already
+    #         # exists, delete it.
+    #         if self._subbers.has_key(s):
+    #             del(self._subbers[s])
+    #         self._subbers[s] = WordSub()
+    #         # iterate over the key,value pairs and add them to the subber
+    #         for k,v in parser.items(s):
+    #             self._subbers[s][k] = v
 
     def _addSession(self, sessionID):
         """Create a new session with the specified ID string."""
@@ -369,18 +363,24 @@ class Kernel:
         self.setPredicate(self._inputStack, inputStack, sessionID)
 
         # run the input through the 'normal' subber
-        subbedInput = self._subbers['normal'].sub(input)
+        # subbedInput = self._subbers['normal'].sub(input)
+        subbedInput = Sub.sub(input)
+        print colored('To Match Pattern: ', 'magenta'), colored(subbedInput, 'magenta')
 
         # fetch the bot's previous response, to pass to the match()
         # function as 'that'.
         outputHistory = self.getPredicate(self._outputHistory, sessionID)
         try: that = outputHistory[-1]
         except IndexError: that = ""
-        subbedThat = self._subbers['normal'].sub(that)
+
+        # subbedThat = self._subbers['normal'].sub(that)
+        subbedThat = Sub.sub(that)
 
         # fetch the current topic
         topic = self.getPredicate("topic", sessionID)
-        subbedTopic = self._subbers['normal'].sub(topic)
+
+        # subbedTopic = self._subbers['normal'].sub(topic)
+        subbedTopic = Sub.sub(topic)
 
         # Determine the final response.
         response = ""

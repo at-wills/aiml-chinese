@@ -1,9 +1,11 @@
 # coding=utf-8
 from aimlCore import Kernel
 import os
-import codecs
+import jieba
 from textrank4zh import TextRank4Keyword
+from termcolor import colored
 
+jieba.load_userdict('source/user-dict')
 alice = Kernel()
 alice.learn('source/startup.xml')
 
@@ -31,7 +33,7 @@ def keywords(sentence):
                 i -= 1
             i += 1
         key_words += ' '.join(words)
-    print '关键词提取结果：', key_words
+    print colored('关键词提取结果：', 'blue'), colored(key_words, 'blue')
     return key_words
 
 
@@ -47,6 +49,14 @@ def talk():
         user_input = keywords(user_input)
         response = alice.respond(user_input)
         print response
+
+
+# only called by split-test.py
+def reload_user_dict(last_dict):
+    for i in last_dict:
+        jieba.del_word(i)
+    jieba.load_userdict('user-dict')
+
 
 if __name__ == '__main__':
     talk()
