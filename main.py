@@ -3,6 +3,7 @@ from aimlCore import Kernel
 import os
 import jieba
 from textrank4zh import TextRank4Keyword
+from termcolor import colored
 
 jieba.load_userdict('source/user-dict')
 alice = Kernel()
@@ -32,7 +33,7 @@ def keywords(sentence):
                 i -= 1
             i += 1
         key_words += ' '.join(words)
-    print '关键词提取结果：', key_words
+    print colored('关键词提取结果：', 'blue'), colored(key_words, 'blue')
     return key_words
 
 

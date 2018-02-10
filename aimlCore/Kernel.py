@@ -16,6 +16,7 @@ import time
 import threading
 import xml.sax
 import Sub
+from termcolor import colored
 
 
 class Kernel:
@@ -362,9 +363,9 @@ class Kernel:
         self.setPredicate(self._inputStack, inputStack, sessionID)
 
         # run the input through the 'normal' subber
-        # todo
         # subbedInput = self._subbers['normal'].sub(input)
         subbedInput = Sub.sub(input)
+        print colored('To Match Pattern: ', 'magenta'), colored(subbedInput, 'magenta')
 
         # fetch the bot's previous response, to pass to the match()
         # function as 'that'.
@@ -372,14 +373,12 @@ class Kernel:
         try: that = outputHistory[-1]
         except IndexError: that = ""
 
-        # todo
         # subbedThat = self._subbers['normal'].sub(that)
         subbedThat = Sub.sub(that)
 
         # fetch the current topic
         topic = self.getPredicate("topic", sessionID)
 
-        # todo
         # subbedTopic = self._subbers['normal'].sub(topic)
         subbedTopic = Sub.sub(topic)
 
