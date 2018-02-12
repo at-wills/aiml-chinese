@@ -16,7 +16,6 @@ import time
 import threading
 import xml.sax
 import Sub
-from termcolor import colored
 
 
 class Kernel:
@@ -363,9 +362,8 @@ class Kernel:
         self.setPredicate(self._inputStack, inputStack, sessionID)
 
         # run the input through the 'normal' subber
-        # subbedInput = self._subbers['normal'].sub(input)
         subbedInput = Sub.sub(input)
-        print colored('To Match Pattern: ', 'magenta'), colored(subbedInput, 'magenta')
+        print 'To Match Pattern: ', subbedInput
 
         # fetch the bot's previous response, to pass to the match()
         # function as 'that'.
@@ -373,13 +371,11 @@ class Kernel:
         try: that = outputHistory[-1]
         except IndexError: that = ""
 
-        # subbedThat = self._subbers['normal'].sub(that)
         subbedThat = Sub.sub(that)
 
         # fetch the current topic
         topic = self.getPredicate("topic", sessionID)
 
-        # subbedTopic = self._subbers['normal'].sub(topic)
         subbedTopic = Sub.sub(topic)
 
         # Determine the final response.
@@ -862,10 +858,10 @@ class Kernel:
         except KeyError: index = 1
         # fetch the user's last input
         inputStack = self.getPredicate(self._inputStack, sessionID)
-        input = self._subbers['normal'].sub(inputStack[-1])
+        input = Sub.sub(inputStack[-1])
         # fetch the Kernel's last response (for 'that' context)
         outputHistory = self.getPredicate(self._outputHistory, sessionID)
-        try: that = self._subbers['normal'].sub(outputHistory[-1])
+        try: that = Sub.sub(outputHistory[-1])
         except: that = "" # there might not be any output yet
         topic = self.getPredicate("topic", sessionID)
         response = self._brain.star("star", input, that, topic, index)
@@ -1000,10 +996,10 @@ class Kernel:
         except KeyError: index = 1
         # fetch the user's last input
         inputStack = self.getPredicate(self._inputStack, sessionID)
-        input = self._subbers['normal'].sub(inputStack[-1])
+        input = Sub.sub(inputStack[-1])
         # fetch the Kernel's last response (for 'that' context)
         outputHistory = self.getPredicate(self._outputHistory, sessionID)
-        try: that = self._subbers['normal'].sub(outputHistory[-1])
+        try: that = Sub.sub(outputHistory[-1])
         except: that = "" # there might not be any output yet
         topic = self.getPredicate("topic", sessionID)
         response = self._brain.star("thatstar", input, that, topic, index)
@@ -1041,10 +1037,10 @@ class Kernel:
         except KeyError: index = 1
         # fetch the user's last input
         inputStack = self.getPredicate(self._inputStack, sessionID)
-        input = self._subbers['normal'].sub(inputStack[-1])
+        input = Sub.sub(inputStack[-1])
         # fetch the Kernel's last response (for 'that' context)
         outputHistory = self.getPredicate(self._outputHistory, sessionID)
-        try: that = self._subbers['normal'].sub(outputHistory[-1])
+        try: that = Sub.sub(outputHistory[-1])
         except: that = "" # there might not be any output yet
         topic = self.getPredicate("topic", sessionID)
         response = self._brain.star("topicstar", input, that, topic, index)

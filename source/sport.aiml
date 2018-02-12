@@ -1,58 +1,54 @@
 <aiml version="1.0">
   <category>
-    <pattern>* 不 喜欢 * 运动 *</pattern>
+    <pattern>* 不 爱 * 运动 *</pattern>
     <template><srai>语言槽 运动之讨厌运动</srai>你需要注意锻炼身体</template>
   </category>
   <category>
-      <pattern>我 爱 踢球</pattern>
-      <template>我也喜欢踢球！</template>
-  </category>
-  <category>
       <pattern>* 不 *</pattern>
-      <that>那么你喜欢其他的体育运动吗？</that>
-      <template><srai>* 不 喜欢 * 运动 *</srai></template>
-  </category>
-  <category>
-      <pattern>* NO *</pattern>
-      <that>那么你喜欢其他的体育运动吗？</that>
-      <template><srai>* 不 喜欢 * 运动 *</srai></template>
+      <that>那么你爱其他的体育运动吗？</that>
+      <template><srai>* 不 爱 * 运动 *</srai></template>
   </category>
   <category>
       <pattern>* 不是 *</pattern>
-      <that>那么你喜欢其他的体育运动吗？</that>
-      <template><srai>* 不 喜欢 * 运动 *</srai></template>
+      <that>那么你喜欢什么其他的体育运动吗？</that>
+      <template><srai>* 不 爱 * 运动 *</srai></template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 跑步 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+      <pattern>* 是的 *</pattern>
+      <that>那么你喜欢什么其他的体育运动吗？</that>
+      <template>你喜欢什么运动呢？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 长跑 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 跑步 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 打球 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 长跑 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 打篮球 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 打球 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 打网球 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 打篮球 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 羽毛球 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 打网球 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 骑单车 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 羽毛球 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
-    <pattern>* 不 喜欢 * 踢足球 *</pattern>
-    <template>那么你喜欢其他的体育运动吗？</template>
+    <pattern>* 不 爱 * 骑单车 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
+  </category>
+  <category>
+    <pattern>* 不 爱 * 踢足球 *</pattern>
+    <template>那么你爱其他的体育运动吗？</template>
   </category>
   <category>
     <pattern>* 累 *</pattern>
@@ -75,79 +71,103 @@
       <template><think><set name="attitude-to-sport">dislike</set></think><random><li>生命在于运动，</li><li>流水不腐，户枢不蠹。</li><li>身体的健康因静止不动而破坏,因运动练习而长期保持。</li></random></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 跑步 *</pattern>
+    <pattern>* 爱 * 跑步 *</pattern>
     <template><set name="like-sport">跑步</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 散步 *</pattern>
+    <pattern>* 爱 * 散步 *</pattern>
     <template><set name="like-sport">散步</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 竞走 *</pattern>
+    <pattern>* 爱 * 竞走 *</pattern>
     <template><set name="like-sport">竞走</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 快走 *</pattern>
+    <pattern>* 爱 * 快走 *</pattern>
     <template><set name="like-sport">快走</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 慢跑 *</pattern>
+    <pattern>* 爱 * 慢跑 *</pattern>
     <template><set name="like-sport">慢跑</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 长跑 *</pattern>
+    <pattern>* 爱 * 长跑 *</pattern>
     <template><set name="like-sport">长跑</set><srai>语言槽 运动之赞美运动项目</srai><srai>语言槽 运动之跑步</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 打篮球 *</pattern>
+    <pattern>* 爱 * 打篮球 *</pattern>
     <template><set name="like-sport">打篮球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 打网球 *</pattern>
+    <pattern>* 爱 * 打网球 *</pattern>
     <template><set name="like-sport">网球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 羽毛球 *</pattern>
+    <pattern>* 爱 * 羽毛球 *</pattern>
     <template><set name="like-sport">羽毛球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 踢足球 *</pattern>
+    <pattern>* 爱 * 踢足球 *</pattern>
     <template><set name="like-sport">踢足球</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 下棋 *</pattern>
-    <template><set name="like-sport">棋类</set><srai>语言槽 运动之赞美运动项目</srai></template>
+    <pattern>* 爱 * 骑 自行车 *</pattern>
+    <template><set name="like-sport">骑行</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 下象棋 *</pattern>
-    <template><srai>* 喜欢 * 下棋 *</srai></template>
+    <pattern>* 爱 * 骑单车 *</pattern>
+    <template><srai>爱 骑 自行车</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 国际象棋 *</pattern>
-    <template><srai>* 喜欢 * 下棋 *</srai></template>
+    <pattern>* 爱 * 骑车 *</pattern>
+    <template><srai>爱 骑 自行车</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 棋 *</pattern>
-    <template><srai>* 喜欢 * 下棋 *</srai></template>
+    <pattern>* 爱 * 骑行 *</pattern>
+    <template><srai>爱 骑 自行车</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 打麻将 *</pattern>
-    <template><think><set name="attitude-to-sport">like</set></think><set name="like-sport">打麻将</set>是很有趣的活动！</template>
+    <pattern>* 爱 * 骑 山地车 *</pattern>
+    <template><srai>爱 骑 自行车</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 骑 自行车 *</pattern>
-    <template><srai>* 喜欢 * 骑行 *</srai></template>
+    <pattern>* 爱 * 健身 *</pattern>
+    <template><set name="like-sport">健身</set><srai>语言槽 运动之赞美运动项目</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 骑单车 *</pattern>
-    <template><srai>* 喜欢 * 骑行 *</srai></template>
+    <pattern>语言槽 运动之棋类</pattern>
+    <template><random><li>陶冶情操</li><li>鼓动智慧</li><i>谋定而动</i><li>消除烦恼</li></random></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 骑行 *</pattern>
-    <template><think><set name="attitude-to-sport">like</set></think><set name="like-sport">骑行</set>是很有趣的活动！</template>
+    <pattern>* 爱 * 下棋 *</pattern>
+    <template><set name="like-sport">思维竞技，</set><srai>语言槽 运动之棋类</srai></template>
   </category>
   <category>
-    <pattern>* 喜欢 * 骑 山地车 *</pattern>
-    <template><srai>* 喜欢 * 骑行 *</srai></template>
+    <pattern>* 爱 * 下象棋 *</pattern>
+    <template><srai>* 爱 * 下棋 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 爱 * 国际象棋 *</pattern>
+    <template><srai>* 爱 * 下棋 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 爱 * 棋 *</pattern>
+    <template><srai>* 爱 * 下棋 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 爱 * 打麻将 *</pattern>
+    <template><srai>* 爱 * 下棋 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 预约 * <fold><or>体育馆</or><or>羽毛球场</or><or>网球场</or><or>篮球场</or><or>棋牌室</or><or>乒乓球馆</or><or>排球馆</or><or>游泳馆</or><or>游泳</or></fold> *</pattern>
+    <template>请访问南开大学体育场馆在线预定系统：http://tycg.nankai.edu.cn/</template>
+  </category>
+  <category>
+    <pattern>什么 是</pattern>
+    <template>什么是什么呢？</template>
+  </category>
+  <category>
+    <pattern>* 什么 是 *</pattern>
+    <template>我们会为你查询 <star index="2"/></template>
   </category>
 </aiml>

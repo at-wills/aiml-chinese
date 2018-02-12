@@ -197,62 +197,44 @@ class PatternMgr:
 		else:
 			# unknown value
 			raise ValueError, "starType must be in ['star', 'thatstar', 'topicstar']"
-		
-		# compare the input string to the matched pattern, word by word.
-		# At the end of this loop, if foundTheRightStar is true, start and
-		# end will contain the start and end indices (in "words") of
-		# the substring that the desired star matched.
-		foundTheRightStar = False
-		start = end = j = numStars = k = 0
-		for i in range(len(words)):
-			# This condition is true after processing a star
-			# that ISN'T the one we're looking for.
-			if i < k:
-				continue
-			# If we're reached the end of the pattern, we're done.
-			if j == len(patMatch):
-				break
-			if not foundTheRightStar:
-				if patMatch[j] in [self._STAR, self._UNDERSCORE]: #we got a star
-					numStars += 1
-					if numStars == index:
-						# This is the star we care about.
-						foundTheRightStar = True
-					start = i
-					# Iterate through the rest of the string.
-					for k in range (i, len(words)):
-						# If the star is at the end of the pattern,
-						# we know exactly where it ends.
-						if j+1  == len (patMatch):
-							end = len (words)
-							break
-						# If the words have started matching the
-						# pattern again, the star has ended.
-						if patMatch[j+1] == words[k]:
-							end = k - 1
-							i = k
-							break
-				# If we just finished processing the star we cared
-				# about, we exit the loop early.
-				if foundTheRightStar:
+
+		# modified by leto
+		# due to the change of star's match strategy
+
+		words_map_star = []
+		word_map = []
+		i = 0
+		while i < len(patMatch):
+			pat = patMatch[i]
+			word = words[0]
+			if pat == self._STAR:
+				if i == len(patMatch) - 1:
+					words_map_star.append(words)
 					break
-			# Move to the next element of the pattern.
-			j += 1
-			
-		# extract the star words from the original, unmutilated input.
-		if foundTheRightStar:
-			#print string.join(pattern.split()[start:end+1])
-			if starType == 'star': return string.join(pattern.split()[start:end+1])
-			elif starType == 'thatstar': return string.join(that.split()[start:end+1])
-			elif starType == 'topicstar': return string.join(topic.split()[start:end+1])
-		else: return ""
+				i += 1
+				pat = patMatch[i]
+				while word != pat:
+					word_map.append(word)
+					words.remove(word)
+					word = words[0]
+				words_map_star.append(word_map)
+				word_map = []
+			words.remove(word)
+			i += 1
+
+		if index - 1 >= len(words_map_star):
+			return ''
+		else:
+			des = words_map_star[index - 1]
+			des = ' '.join(des)
+			return des
 
 	def _match(self, words, thatWords, topicWords, root):
 		"""Return a tuple (pat, tem) where pat is a list of nodes, starting
 		at the root and leading to the matching pattern, and tem is the
 		matched template.
 
-		""" 
+		"""
 		# base-case: if the word list is empty, return the current node's
 		# template.
 		if len(words) == 0:
@@ -290,7 +272,7 @@ class PatternMgr:
 
 		first = words[0]
 		suffix = words[1:]
-		
+
 		# Check underscore.
 		# Note: this is causing problems in the standard AIML set, and is
 		# currently disabled.
@@ -317,7 +299,7 @@ class PatternMgr:
 			if template is not None:
 				newPattern = [first] + pattern
 				return (newPattern, template)
-		
+
 		# check star
 		if root.has_key(self._STAR):
 			# Must include the case where suf is [] in order to handle the case
@@ -330,4 +312,4 @@ class PatternMgr:
 					return (newPattern, template)
 
 		# No matches were found.
-		return (None, None)			
+		return (None, None)
