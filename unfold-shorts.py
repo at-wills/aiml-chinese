@@ -14,7 +14,7 @@ import itertools
 # 目标文件夹
 path = 'source'
 # 目标文件
-unfold_list = ['unfold-test.aiml']
+unfold_list = ['sport.aiml']
 os.chdir(path)
 
 
@@ -57,7 +57,7 @@ class Patter:
     @staticmethod
     def unfold_or(self, fold):
         allowed_chars = set(' ' + '\n')
-        if len(fold.text) != 0:
+        if fold.text is not None:
             if set(fold.text) > allowed_chars:
                 # 其实能做，不过…… (｀・ω・´)
                 print 'error: not support fold tag with text!'
