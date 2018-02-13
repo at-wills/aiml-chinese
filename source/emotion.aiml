@@ -1,0 +1,30 @@
+<aiml version="1.0">
+    <category>
+        <pattern>* 我爱你 *</pattern>
+        <template>我也爱你</template>
+    </category>
+    <category>
+        <pattern>* 我 恨 你 *</pattern>
+        <template>我爱你</template>
+    </category>
+    <category>
+        <pattern>* 我 * 讨厌 你 *</pattern>
+        <template>我爱你</template>
+    </category>
+    <category>
+        <pattern>* 我 * 恋爱 *</pattern>
+        <template>大吉大利，今晚吃鸡</template>
+    </category>
+    <category>
+        <pattern>* 我 * 失恋 *</pattern>
+        <template><random><li>Try to love yourself</li><li>What doesn't kill you makes you stronger</li><li>人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。 </li><li>春有百花，秋看月。夏有凉风，冬有雪。</li><li>赏月色千家朦胧，风花雪月如梦</li><li>这城市车水马龙，我心事有谁懂</li><li>分手了就做回自己，一个人的世界同样有月升月落，也有美丽的瞬间。</li><li>结束是为了更好的开始</li></random></template>
+    </category>
+    <category>
+        <pattern>* 我 爱 <fold><or>中国</or><or>中华</or><or>祖国</or></fold></pattern>
+        <template>爱国是公民必有的道德情操，是中华民族最重要的传统，也是社会主义核心价值观最主要的部分。爱国是各族人民重要的精神支柱。</template>
+    </category>
+    <category>
+        <pattern><fold><or>我们</or><or>我</or></fold> 爱 <fold><or>中国</or><or>中华</or><or>祖国</or></fold></pattern>
+        <template>好</template>
+    </category>
+</aiml>

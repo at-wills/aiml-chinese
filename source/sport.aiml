@@ -170,4 +170,84 @@
     <pattern>* 什么 是 *</pattern>
     <template>我们会为你查询 <star index="2"/></template>
   </category>
+  <category>
+    <pattern>* 是 什么 *</pattern>
+    <template>我们会为你查询 <star index="1"/></template>
+  </category>
+  <category>
+    <pattern>* 体育馆 * 哪 *</pattern>
+    <template>体育馆在文科，公共教学楼D区北边</template>
+  </category>
+  <category>
+    <pattern>* 怎么 去 * 体育馆 *</pattern>
+    <template>体育馆在文科，公共教学楼D区北边</template>
+  </category>
+  <category>
+    <pattern>* 体育馆 * 怎么 去 *</pattern>
+    <template>体育馆在文科，公共教学楼D区北边</template>
+  </category>
+  <category>
+    <pattern>* <fold><or>羽毛球馆</or><or>羽毛球场</or><or>游泳馆</or><or>乒乓球馆</or><or>乒乓球室</or><or>棋牌室</or><or>篮球馆</or></fold> * 哪 *</pattern>
+    <template>在体育馆里。<srai>* 体育馆 * 哪 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 足球场 * 怎么 去 *</pattern>
+    <template>足球场在理科，第二食堂西边</template>
+  </category>
+  <category>
+    <pattern> * 怎么 去 * 足球场 *</pattern>
+    <template>足球场在理科，第二食堂西边</template>
+  </category>
+  <category>
+    <pattern> * 足球场 * 哪 *</pattern>
+    <template>足球场在理科，第二食堂西边</template>
+  </category>
+  <category>
+    <pattern>* 网球场 * 怎么 去 *</pattern>
+    <template>网球场在体育馆旁边。<srai>* 体育馆 * 哪 *</srai>。在理科体育场旁边也有</template>
+  </category>
+  <category>
+    <pattern> * 怎么 去 * 网球场 *</pattern>
+    <template>网球场在体育馆旁边。<srai>* 体育馆 * 哪 *</srai>。在理科体育场旁边也有</template>
+  </category>
+  <category>
+    <pattern> * 网球场 * 哪 *</pattern>
+    <template>网球场在体育馆旁边。<srai>* 体育馆 * 哪 *</srai>。在理科体育场旁边也有</template>
+  </category>
+  <category>
+    <pattern>* 怎么 去 * <fold><or>羽毛球馆</or><or>羽毛球场</or><or>游泳馆</or><or>乒乓球馆</or><or>乒乓球室</or><or>棋牌室</or><or>篮球馆</or></fold> *</pattern>
+    <template>在体育馆里。<srai>* 体育馆 * 哪 *</srai></template>
+  </category>
+  <category>
+    <pattern>* <fold><or>羽毛球馆</or><or>羽毛球场</or><or>游泳馆</or><or>乒乓球馆</or><or>乒乓球室</or><or>棋牌室</or><or>篮球馆</or></fold> * 怎么 去 *</pattern>
+    <template>在体育馆里。<srai>* 体育馆 * 哪 *</srai></template>
+  </category>
+  <category>
+    <pattern>* 是谁 *</pattern>
+    <template>查询此人：<star index="1"></star></template>
+  </category>
+  <category>
+    <pattern>* 谁是 *</pattern>
+    <template>查询此人：<star index="2"></star></template>
+  </category>
+  <category>
+    <pattern>* 是不是 *</pattern>
+    <template>你是不是在刁难我胖虎</template>
+  </category>
+  <category>
+    <pattern>* 津南 * 有没有 * <fold><or>篮球场</or><or>足球场</or><or>塑胶跑道</or><or>跑道</or><or>游泳馆</or><or>体育馆</or><or>健身馆</or><or>棋牌室</or><or>乒乓球室</or><or>排球馆</or><or>排球场</or><or>篮球场</or><or>篮球馆</or><or>网球场</or><or>羽毛球场</or><or>羽毛球馆</or></fold> *</pattern>
+    <template>有</template>
+  </category>
+  <category>
+    <pattern>* 大三 * <fold><or>还要</or><or>需要</or><or>用</or><or>要</or></fold> <fold><or>选</or><or>修</or><or>上</or></fold> <fold><or>体育</or><or>体育课</or></fold> *</pattern>
+    <template>如果在大一大二已经修完体育，大三不是必须选体育课的。选修的体育课可以作为E类课学分。</template>
+  </category>
+  <category>
+    <pattern>* 津南 * <fold><or>夜跑</or><or>跑步</or></fold> *</pattern>
+    <template>在津南，你可以在理科体育场跑步；也可以直接在校内公路上，但是要注意安全哦！</template>
+  </category>
+  <category>
+    <pattern>* 体测 *</pattern>
+    <template>体测在每学年第一学期后期，各个年级都需要参加；大一大二体测成绩对体育成绩有影响。</template>
+  </category>
 </aiml>

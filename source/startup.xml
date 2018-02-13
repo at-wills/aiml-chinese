@@ -3,7 +3,7 @@
 <category>
 <pattern>LOAD ALICE</pattern>
 <template>
-<learn>sport-unfold.aiml</learn><learn>emotion.aiml</learn>
+<learn>sport-unfold.aiml</learn><learn>emotion-unfold.aiml</learn>
 </template>
 </category>
 </aiml>

@@ -14,7 +14,7 @@ import itertools
 # 目标文件夹
 path = 'source'
 # 目标文件
-unfold_list = ['sport.aiml']
+unfold_list = ['emotion.aiml']
 os.chdir(path)
 
 
@@ -43,15 +43,21 @@ class Patter:
             for i in xrange(folds_num):
                 fold = folds[i]
                 if i == 0:
-                    pattern_text = fold.xpath('preceding-sibling::text()')[0].encode('utf-8').decode('utf-8')
+                    pattern_text = fold.xpath('preceding-sibling::text()')
+                    if len(pattern_text) != 0:
+                        pattern_text = pattern_text[0].encode('utf-8').decode('utf-8')
                 else:
-                    pattern_text = fold.xpath('//text()[count(preceding-sibling::fold)=$count]', count=i)[0].encode(
-                        'utf-8').decode('utf-8')
-                self.things.append(pattern_text)
+                    pattern_text = fold.xpath('//text()[count(preceding-sibling::fold)=$count]', count=i)
+                    if len(pattern_text) != 0:
+                        pattern_text = pattern_text[0].encode('utf-8').decode('utf-8')
+                if len(pattern_text) != 0:
+                    self.things.append(pattern_text)
                 self.things.append(fold)
                 if i == folds_num - 1:
-                    last_pattern_text = fold.xpath('following-sibling::text()')[0].encode('utf-8').decode('utf-8')
-                    self.things.append(last_pattern_text)
+                    last_pattern_text = fold.xpath('following-sibling::text()')
+                    if len(last_pattern_text) != 0:
+                        last_pattern_text = last_pattern_text[0].encode('utf-8').decode('utf-8')
+                        self.things.append(last_pattern_text)
 
     # return a list containing all or.text
     @staticmethod
@@ -78,7 +84,6 @@ class Patter:
                 self.things[i] = self.unfold_or(self, item)
         for i in itertools.product(*self.things, repeat=1):
             str_patterns.append(' '.join(i))
-        print str_patterns
         return str_patterns
 
 
@@ -109,3 +114,4 @@ for category in root.iter('category'):
             root.append(new_category)
 
 write_xml(tree, unfold_list[0])
+print 'done'
