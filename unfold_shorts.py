@@ -11,11 +11,8 @@ from copy import deepcopy
 from lxml import etree
 import itertools
 
-# 目标文件夹
-path = 'source'
 # 目标文件
-unfold_list = ['emotion.aiml']
-os.chdir(path)
+unfold_list = ['source/emotion.aiml', 'source/sport.aiml']
 
 
 def read_tree(in_file):

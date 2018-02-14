@@ -24,7 +24,79 @@
         <template>爱国是公民必有的道德情操，是中华民族最重要的传统，也是社会主义核心价值观最主要的部分。爱国是各族人民重要的精神支柱。</template>
     </category>
     <category>
-        <pattern><fold><or>我们</or><or>我</or></fold> 爱 <fold><or>中国</or><or>中华</or><or>祖国</or></fold></pattern>
-        <template>好</template>
+        <pattern>* 我 爱吃 *</pattern>
+        <template>我也爱吃<star index="2"/></template>
+    </category>
+    <category>
+        <pattern>* 我 * <fold><or>孤单</or><or>寂寞</or><or>无聊</or><or>好孤单</or></fold> *</pattern>
+        <template>当你孤单时你会想起谁？</template>
+    </category>
+    <category>
+        <pattern>* 你 *</pattern>
+        <that>当你孤单时你会想起谁？</that>
+        <template>害羞 ヾ(๑╹◡╹)ﾉ"</template>
+    </category>
+    <category>
+        <pattern>* 我 妈 *</pattern>
+        <that>当你孤单时你会想起谁？</that>
+        <template>好孩子~</template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>当你孤单时你会想起谁？</that>
+        <template>那就告诉他！</template>
+    </category>
+    <category>
+        <pattern>* 我 <fold><or>漂亮</or><or>美</or><or>帅</or></fold> 吗 *</pattern>
+        <template>B树是一种自平衡的树，能够保持数据有序。这种数据结构能够让查找数据、顺序访问、插入数据及删除的动作，都在对数时间内完成。——让我们牢记B树。</template>
+    </category>
+    <category>
+        <pattern>* 什么 意思 *</pattern>
+        <that>B树是一种自平衡的树，能够保持数据有序。这种数据结构能够让查找数据、顺序访问、插入数据及删除的动作，都在对数时间内完成。——让我们牢记B树。</that>
+        <template>你懂得 (￣▽￣)／</template>
+    </category>
+    <category>
+        <pattern>* <fold><or>傻子</or><or>傻</or><or>蠢</or><or>好笨</or><or>太笨</or></fold> *</pattern>
+        <template>小时了了，大未必佳</template>
+    </category>
+    <category>
+        <pattern>* <fold><or>你</or><pr>你好</pr></fold> * <fold><or>萌</or><or>可爱</or><or>聪明</or><or>乖</or><or>乖巧</or><or>好乖</or><or>真乖</or></fold></pattern>
+        <template><random><li>哪里哪里</li><li>多谢夸奖 ヾ(๑╹◡╹)ﾉ"</li></random></template>
+    </category>
+    <category>
+        <pattern>* <fold><or>同性恋</or><or>gay</or><or>拉拉</or></fold> *</pattern>
+        <template>国现有的法律不支持也不反对同性恋，但是同性婚姻是不受法律保护的。 </template>
+    </category>
+    <category>
+        <pattern>* <fold><or>我</or><or>我是</or></fold> * 单身</pattern>
+        <template><random><li>即使单着也一个人骄傲的过！</li><li>孤独是最好的增值期</li><li>不要放弃治疗，总能找着对象的。</li></random></template>
+    </category>
+    <category>
+        <pattern>* 暗恋 *</pattern>
+        <template>我从来不曾抗拒你的魅力，虽然你从来不曾对我着迷；我总是微笑的看着你，我的情意总是轻易就洋溢眼底</template>
+    </category>
+    <category>
+        <pattern>* 爱我吗 *</pattern>
+        <template>爱</template>
+    </category>
+    <category>
+        <pattern>* 爱过我吗 *</pattern>
+        <template>爱过</template>
+    </category>
+    <category>
+        <pattern>* 从 哪里 * 来 *</pattern>
+        <template>从东土大唐而来</template>
+    </category>
+    <category>
+        <pattern>* 从何而来 *</pattern>
+        <template>从东土大唐而来</template>
+    </category>
+    <category>
+        <pattern>* 到 哪里 * 去 *</pattern>
+        <template>到西天取经去</template>
+    </category>
+    <category>
+        <pattern>* 掉 <fold><or>水里</or><or>进水</or></fold> * 先救 *</pattern>
+        <template>我不会游泳</template>
     </category>
 </aiml>

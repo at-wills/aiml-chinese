@@ -3,6 +3,8 @@ from aimlCore import Kernel
 import os
 import jieba
 from textrank4zh import TextRank4Keyword
+# 在此处引入，用于直接生成 unfold 文件
+import unfold_shorts
 
 jieba.load_userdict('source/user-dict')
 alice = Kernel()

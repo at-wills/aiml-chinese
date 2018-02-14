@@ -72,7 +72,7 @@ pip install web.py
 
 ### 2.4 简化写作
 
-添加了 unfold-shorts.py 文件，该文件将辅助对 pattern 内容进行解析，以部分简化 aiml 文件的写作。待处理文件在 unfold-shorts.py 文件的 `unfold_list` 中指定。
+添加了 unfold_shorts.py 文件，该文件将辅助对 pattern 内容进行解析，以部分简化 aiml 文件的写作。
 
 以文件 "test.aiml" 为例：
 
@@ -102,6 +102,8 @@ pip install web.py
 ```
 
 对于 pattern 中的 fold 标签，将其中的 or 标签内容展开，与原 pattern 文字内容拼接，生成多个 category。
+
+如果使用 unfold_shorts.py 对原 aiml 文件进行解析，需要 **在 `unfdld_list` 中指定目标文件，在 `startup.xml` 文件的 `learn`标签中写入 `-unfold.aiml` 后缀**。
 
 > 注意：pattern 标签中的英文内容需要为全大写
 
