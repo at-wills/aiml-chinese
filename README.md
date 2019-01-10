@@ -60,7 +60,7 @@ pip install web.py
 
 ### 2.3 同义词替换
 
-去除了原 aiml 实现中的 DefaultSubs.py 和 WordSub.py，添加了文件 Subs.py 来实现功能。
+去除了原 aiml 实现中的 DefaultSubs.py 和 WordSub.py，添加了文件 Sub.py 来实现功能。
 
 需要进行替换的词汇保存在 `source/subs` 中，格式为 `原词 替换词` 。
 
